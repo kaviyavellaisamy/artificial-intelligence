@@ -1,0 +1,27 @@
+def vacuum_cleaner(location, status):
+    print(f"Initial State: Location={location}, Room Status={status}")
+
+    if location == 'A':
+        if status['A'] == 'Dirty':
+            print("Cleaning Room A...")
+            status['A'] = 'Clean'
+        print("Moving to Room B...")
+        location = 'B'
+        if status['B'] == 'Dirty':
+            print("Cleaning Room B...")
+            status['B'] = 'Clean'
+    else:
+        if status['B'] == 'Dirty':
+            print("Cleaning Room B...")
+            status['B'] = 'Clean'
+        print("Moving to Room A...")
+        location = 'A'
+        if status['A'] == 'Dirty':
+            print("Cleaning Room A...")
+            status['A'] = 'Clean'
+
+    print(f"Final State: Location={location}, Room Status={status}")
+
+# Example usage
+# You can change the initial location and room statuses here
+vacuum_cleaner(location='A', status={'A': 'Dirty', 'B': 'Dirty'})
